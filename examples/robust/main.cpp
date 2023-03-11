@@ -21,8 +21,8 @@
 #include <iostream>
 #include <chrono>
 
-#include <types.h>
-#include <sqpnp.h>
+#include <sqpnp/types.h>
+#include <sqpnp/sqpnp.h>
 
 #include "robust_pose_pnp.h"
 

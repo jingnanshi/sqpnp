@@ -16,8 +16,8 @@
 
 #include <Eigen/Core>
 
-#include <types.h>
-#include <sqpnp.h>
+#include <sqpnp/types.h>
+#include <sqpnp/sqpnp.h>
 
 namespace robust_pose_pnp {
 

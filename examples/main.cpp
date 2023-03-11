@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <sqpnp.h>
+#include <sqpnp/sqpnp.h>
 #include <opencv2/core.hpp>
 #include <vector>
 #include <chrono>

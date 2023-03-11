@@ -9,7 +9,7 @@
 //     a) Paper:         https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460460.pdf
 //     b) Supplementary: https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460460-supp.pdf
 
-#include <sqpnp.h>
+#include <sqpnp/sqpnp.h>
 
 namespace sqpnp 
 {
