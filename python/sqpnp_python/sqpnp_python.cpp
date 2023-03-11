@@ -20,5 +20,6 @@ PYBIND11_MODULE(sqpnp_python, m) {
       .def_readwrite("num_iterations", &sqpnp::SQPSolution::num_iterations)
       .def_readwrite("sq_error", &sqpnp::SQPSolution::num_iterations);
 
- m.def("sqpnp_solve", &sqpnp::sqpnp_solve, "Solve PnP with SQPnP (with weights)");
+  m.def("sqpnp_solve", &sqpnp::sqpnp_solve, "Solve PnP with SQPnP (with weights)",
+        py::arg("projections"), py::arg("pts_3d"), py::arg("weights"));
 }
