@@ -153,8 +153,8 @@ struct SQPSolution {
   Eigen::Matrix<double, 9, 1> r; // Actual matrix upon convergence
   Eigen::Matrix<double, 9, 1> r_hat; // "Clean" (nearest) rotation matrix
   Eigen::Matrix<double, 3, 1> t;
-  int num_iterations;
-  double sq_error;
+  int num_iterations = -1;
+  double sq_error = std::numeric_limits<double>::infinity();
 
 };
 

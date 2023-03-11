@@ -394,4 +394,31 @@ void PnPSolver::RowAndNullSpace(const Eigen::Matrix<double, 9, 1> &r,
 
 }
 
+std::vector<SQPSolution> sqpnp_solve(const Eigen::Matrix<double, 2, Eigen::Dynamic> &projections,
+                                     const Eigen::Matrix<double, 2, Eigen::Dynamic> &pts_3d,
+                                     const std::vector<double> &weights) {
+  assert(projections.cols() == pts_3d.cols());
+  auto n = projections.cols();
+  std::vector<sqpnp::_Point> _3dpoints(n);
+  std::vector<sqpnp::_Projection> _projections(n);
+
+  std::vector<SQPSolution> sols;
+
+  for (int i = 0; i < n; ++i) {
+    _3dpoints[i] = sqpnp::_Point(pts_3d(0, i), pts_3d(1, i), pts_3d(2, i));
+    _projections[i] = sqpnp::_Projection(projections(0, i), projections(1, i));
+  }
+
+  sqpnp::PnPSolver solver(_3dpoints, _projections, weights);
+
+  if (solver.IsValid()) {
+    solver.Solve();
+    for (int i = 0; i < solver.NumberOfSolutions(); i++) {
+      sols.push_back(*solver.SolutionPtr(i));
+    }
+  }
+
+  return sols;
+}
+
 }
