@@ -395,7 +395,7 @@ void PnPSolver::RowAndNullSpace(const Eigen::Matrix<double, 9, 1> &r,
 }
 
 std::vector<SQPSolution> sqpnp_solve(const Eigen::Matrix<double, 2, Eigen::Dynamic> &projections,
-                                     const Eigen::Matrix<double, 2, Eigen::Dynamic> &pts_3d,
+                                     const Eigen::Matrix<double, 3, Eigen::Dynamic> &pts_3d,
                                      const std::vector<double> &weights) {
   assert(projections.cols() == pts_3d.cols());
   auto n = projections.cols();
