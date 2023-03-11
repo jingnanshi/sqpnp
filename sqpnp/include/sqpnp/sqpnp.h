@@ -23,7 +23,9 @@ namespace sqpnp {
 
 // helper function for calculating PnP with Eigen
 std::vector<SQPSolution> sqpnp_solve(const Eigen::Matrix<double, 2, Eigen::Dynamic> &projections,
-                                     const Eigen::Matrix<double, 2, Eigen::Dynamic> &pts_3d);
+                                     const Eigen::Matrix<double, 2, Eigen::Dynamic> &pts_3d,
+                                     const std::vector<double> &weights
+);
 
 class PnPSolver {
 
