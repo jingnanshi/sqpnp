@@ -1,0 +1,12 @@
+from setuptools import setup
+
+setup(
+    name='sqpnp_python',
+    version='1.0.0',
+    author='',
+    author_email='',
+    description='Python binding for SQPnP',
+    package_dir={'': '${CMAKE_CURRENT_BINARY_DIR}'},
+    packages=['sqpnp_python'],
+    package_data={'': ['*.so']}
+)
